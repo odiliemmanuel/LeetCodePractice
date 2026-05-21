@@ -1,9 +1,9 @@
 package medium;
 
-public class MediumTasks {
+public class ConsecutiveOccurrence {
     public static void main(String[] args) {
 
-        int [] array = {5, 6, 3, 4, 5, 1, 2, 3, 9};
+        int [] array = {3, 3, 3, 3};
         int result = consecutiveOccurrences(array);
         System.out.println(result);
     }
