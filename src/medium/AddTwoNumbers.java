@@ -1,32 +1,37 @@
 package medium;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class AddTwoNumbers {
     public static void main(String[] args) {
 
-        List<Integer> list = List.of(2, 4, 3);
-        List<Integer> list2 = List.of(5, 6, 9);
+        int[] list = {2, 4, 3};
+        int [] list2 = {5, 6, 9};
 
-        List<Integer> result = addTwoNumbers(list, list2);
+        ArrayList<Integer> result = addTwoNumbers(list, list2);
         System.out.println(result);
     }
 
-    public static List<Integer> addTwoNumbers(List<Integer> num1, List<Integer> num2) {
-        List<Integer> result = new ArrayList<>();
+    public static ArrayList<Integer> addTwoNumbers(int[] num1, int[] num2) {
+        ArrayList<Integer> result = new ArrayList<>();
+        int sum = 0;
+        for(int count = 0; count < num1.length; count ++) {
+            for (int index = 0;  index < num2.length; index ++) {
+               sum = num1[count] + num2[index];
 
-        for (int count = 0; count < num1.size(); count++) {
-            for (int index = count; index < num2.size(); index++) {
-                int sum = num1.get(count) + num2.get(index);
                 if (sum > 9) {
-                    result.add(sum - 10);
+                    sum = sum - 10;
+
                 }
-                else{
-                    result.add(sum);
-                }
+
+                num1[count] += 1;
 
             }
+
+            result.add(sum);
+
         }
 
         return result;
